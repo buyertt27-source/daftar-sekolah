@@ -3,388 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEKOLAH BUDIMULIA - Pendaftaran</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <title>Struktur Kelas</title>
 
-        body {
-            color: #333;
-            overflow-x: hidden;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        /* Background dengan efek blur saat scroll */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            transition: filter 0.5s ease;
-        }
-
-        .background-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Header dan Navigasi */
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            color: #1a5276;
-            font-size: 1.8rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #1a5276;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero-content {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 40px;
-            border-radius: 10px;
-            color: white;
-            max-width: 800px;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #1a5276;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #154360;
-        }
-
-        /* Kegiatan Section */
-        .activities {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: #1a5276;
-            font-size: 2rem;
-        }
-
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .activity-item {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .activity-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .activity-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        /* Pendaftaran Section */
-        .registration {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-
-        .price-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .price-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .price-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .price-card h3 {
-            color: #1a5276;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            background-color: #1a5276;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .payment-info {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .payment-info h3 {
-            color: #1a5276;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .contact-number {
-            display: inline-block;
-            background-color: #27ae60;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a5276;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
-            }
-
-            nav ul li {
-                margin: 0 10px;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Background dengan efek blur -->
-    <div class="background-container" id="background">
-        <img src="https://files.catbox.moe/oekqxp.jpg" alt="Background Sekolah" class="background-image">
+
+<!-- ================= HEADER ================= -->
+
+<header class="hero">
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="hero-content">
+
+        <h1>🍄 STRUKTUR KELAS 🍄</h1>
+
+        <p>
+            Tema Super Mario
+        </p>
+
+        <a href="#wali" class="btn">
+            Lihat Struktur
+        </a>
+
     </div>
 
-    <!-- Header dan Navigasi -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>SEKOLAH BUDIMULIA</h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#activities">Kegiatan</a></li>
-                        <li><a href="#registration">Pendaftaran</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Selamat Datang di Sekolah Budi Mulia</h2>
-                <p>Mendidik generasi muda dengan penuh kasih sayang dan ilmu pengetahuan untuk masa depan yang gemilang.</p>
-                <a href="#registration" class="cta-button">Daftar Sekarang</a>
-            </div>
-        </div>
-    </section>
+<!-- ================= WALI KELAS ================= -->
 
-    <!-- Kegiatan Section -->
-    <section class="activities" id="activities">
-        <div class="container">
-            <h2 class="section-title">Kegiatan Anak-Anak di Sekolah</h2>
-            <div class="activities-grid">
-                <div class="activity-item">
-                    <img src="https://files.catbox.moe/uwfvvk.jpg" alt="Kegiatan Belajar">
-                </div>
-                <div class="activity-item">
-                    <img src="https://files.catbox.moe/j6xkhc.jpg" alt="Kegiatan Olahraga">
-                </div>
-                <div class="activity-item">
-                    <img src="https://files.catbox.moe/u0biio.jpg" alt="Kegiatan Seni">
-                </div>
-                <div class="activity-item">
-                    <img src="https://files.catbox.moe/vte9cy.jpg" alt="Kegiatan Kelompok">
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="wali" class="section">
 
-    <!-- Pendaftaran Section -->
-    <section class="registration" id="registration">
-        <div class="container">
-            <h2 class="section-title">Pendaftaran</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Harga Terjangkau Kualitas Wadidaw</p>
-            
-            <div class="price-cards">
-                <div class="price-card">
-                    <h3>Gelombang 1</h3>
-                    <div class="price">Rp.500.000</div>
-                    <p>Pendaftaran awal dengan harga spesial</p>
-                    <span class="highlight">Terbatas</span>
-                </div>
-                <div class="price-card">
-                    <h3>Gelombang 2</h3>
-                    <div class="price">Rp.1.000.000</div>
-                    <p>Pendaftaran reguler dengan fasilitas lengkap</p>
-                </div>
-                <div class="price-card">
-                    <h3>Gelombang 3</h3>
-                    <div class="price">Rp.1.500.000</div>
-                    <p>Pendaftaran menjelang tahun ajaran baru</p>
-                </div>
-                <div class="price-card">
-                    <h3>Gelombang Terakhir</h3>
-                    <div class="price">Rp.2.000.000</div>
-                    <p>Pendaftaran akhir dengan kuota terbatas</p>
-                    <span class="highlight">Segera Daftar</span>
-                </div>
-            </div>
-            
-            <div class="payment-info">
-                <h3>Informasi Pendaftaran</h3>
-                <p>"Yang mau mendaftarkan anaknya/tanya-tanya tentang sekolah bisa contact kami :):):)"</p>
-                <a href="https://wa.me/6283862949796" class="contact-number">6283862949796</a>
-            </div>
-        </div>
-    </section>
+<h2>👑 Wali Kelas 👑</h2>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sekolah Budi Mulia. Semua Hak Dilindungi.</p>
-        </div>
-    </footer>
+<div class="leader-card reveal zoom">
 
-    <script>
-        // Efek blur pada background saat scroll
-        window.addEventListener('scroll', function() {
-            const background = document.getElementById('background');
-            const scrollPosition = window.scrollY;
-            const blurValue = Math.min(scrollPosition / 50, 10); // Maksimal blur 10px
-            
-            background.style.filter = `blur(${blurValue}px) brightness(${100 - blurValue * 5}%)`;
-        });
-    </script>
+<img
+src="https://i.pravatar.cc/300?img=60"
+alt="wali">
+
+<h3>Nama Wali Kelas</h3>
+
+<p>Wali Kelas</p>
+
+</div>
+
+</section>
+
+<!-- ================= SISWA ================= -->
+
+<section class="section">
+
+<h2>🍄 Anggota Kelas 🍄</h2>
+
+<div class="students">
+
+<!-- 1 -->
+<div class="student-card reveal left">
+<img src="https://i.pravatar.cc/300?img=1">
+<h3>Siswa 1</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 2 -->
+<div class="student-card reveal right">
+<img src="https://i.pravatar.cc/300?img=2">
+<h3>Siswa 2</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 3 -->
+<div class="student-card reveal up">
+<img src="https://i.pravatar.cc/300?img=3">
+<h3>Siswa 3</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 4 -->
+<div class="student-card reveal zoom">
+<img src="https://i.pravatar.cc/300?img=4">
+<h3>Siswa 4</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 5 -->
+<div class="student-card reveal rotate">
+<img src="https://i.pravatar.cc/300?img=5">
+<h3>Siswa 5</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 6 -->
+<div class="student-card reveal flip">
+<img src="https://i.pravatar.cc/300?img=6">
+<h3>Siswa 6</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 7 -->
+<div class="student-card reveal bounce">
+<img src="https://i.pravatar.cc/300?img=7">
+<h3>Siswa 7</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 8 -->
+<div class="student-card reveal left">
+<img src="https://i.pravatar.cc/300?img=8">
+<h3>Siswa 8</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 9 -->
+<div class="student-card reveal right">
+<img src="https://i.pravatar.cc/300?img=9">
+<h3>Siswa 9</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 10 -->
+<div class="student-card reveal up">
+<img src="https://i.pravatar.cc/300?img=10">
+<h3>Siswa 10</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 11 -->
+<div class="student-card reveal zoom">
+<img src="https://i.pravatar.cc/300?img=11">
+<h3>Siswa 11</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 12 -->
+<div class="student-card reveal rotate">
+<img src="https://i.pravatar.cc/300?img=12">
+<h3>Siswa 12</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 13 -->
+<div class="student-card reveal flip">
+<img src="https://i.pravatar.cc/300?img=13">
+<h3>Siswa 13</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 14 -->
+<div class="student-card reveal bounce">
+<img src="https://i.pravatar.cc/300?img=14">
+<h3>Siswa 14</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 15 -->
+<div class="student-card reveal left">
+<img src="https://i.pravatar.cc/300?img=15">
+<h3>Siswa 15</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 16 -->
+<div class="student-card reveal right">
+<img src="https://i.pravatar.cc/300?img=16">
+<h3>Siswa 16</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 17 -->
+<div class="student-card reveal up">
+<img src="https://i.pravatar.cc/300?img=17">
+<h3>Siswa 17</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 18 -->
+<div class="student-card reveal zoom">
+<img src="https://i.pravatar.cc/300?img=18">
+<h3>Siswa 18</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 19 -->
+<div class="student-card reveal rotate">
+<img src="https://i.pravatar.cc/300?img=19">
+<h3>Siswa 19</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 20 -->
+<div class="student-card reveal flip">
+<img src="https://i.pravatar.cc/300?img=20">
+<h3>Siswa 20</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 21 -->
+<div class="student-card reveal bounce">
+<img src="https://i.pravatar.cc/300?img=21">
+<h3>Siswa 21</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 22 -->
+<div class="student-card reveal left">
+<img src="https://i.pravatar.cc/300?img=22">
+<h3>Siswa 22</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 23 -->
+<div class="student-card reveal right">
+<img src="https://i.pravatar.cc/300?img=23">
+<h3>Siswa 23</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 24 -->
+<div class="student-card reveal up">
+<img src="https://i.pravatar.cc/300?img=24">
+<h3>Siswa 24</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 25 -->
+<div class="student-card reveal zoom">
+<img src="https://i.pravatar.cc/300?img=25">
+<h3>Siswa 25</h3>
+<p>Anggota</p>
+</div>
+
+<!-- 26 -->
+<div class="student-card reveal rotate">
+<img src="https://i.pravatar.cc/300?img=26">
+<h3>Siswa 26</h3>
+<p>Anggota</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+🍄 © 2026 Struktur Kelas | Super Mario Theme 🍄
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
-  </html>
+</html>
