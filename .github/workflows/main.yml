@@ -98,11 +98,10 @@ jobs:
           Write-Host "Password: $env:RDP_PASSWORD"
           Write-Host "=============================="
 
-      - name: Keep Alive
-        shell: powershell
-        run: |
-          while ($true) {
-              Start-Sleep -Seconds 300
-          }              Write-Host "[$(Get-Date)] RDP Active - Use Ctrl+C in workflow to terminate"
-              Start-Sleep -Seconds 300
-          }
+      - - name: Keep Alive
+  shell: powershell
+  run: |
+    while ($true) {
+        Write-Host "$(Get-Date) Runner masih hidup..."
+        Start-Sleep -Seconds 300
+    }
