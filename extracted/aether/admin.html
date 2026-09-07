@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aether — Admin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="admin-body">
+
+<button id="admin-menu-btn" aria-label="Open menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<div id="admin-sidebar-overlay"></div>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="brand"><span class="brand-mark">◈</span> AETHER</div>
+    <ul class="admin-nav">
+      <li><a href="#" data-view="dashboard" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Dashboard</a></li>
+      <li><a href="#" data-view="products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.59 13.41L11 3.83V3H3v8h.83l9.58 9.59a2 2 0 002.83 0l4.35-4.35a2 2 0 000-2.83z"/><circle cx="7" cy="7" r="1.5"/></svg>Products</a></li>
+      <li><a href="#" data-view="orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>Orders</a></li>
+      <li><a href="#" data-view="customers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Customers</a></li>
+      <li><a href="#" data-view="sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>Sales</a></li>
+      <li><a href="#" data-view="analytics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</a></li>
+      <li><a href="#" data-view="payments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Payments</a></li>
+      <li><a href="#" data-view="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a></li>
+    </ul>
+    <a href="index.html" class="admin-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to storefront</a>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div><h1>Dashboard</h1><p>An overview of Aether's storefront performance. <span class="demo-flag">Demo data</span></p></div>
+    </div>
+
+    <div class="admin-view active" id="view-dashboard">
+      <div class="kpi-grid" id="kpi-grid"></div>
+      <div class="admin-grid-2">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Revenue</h3>
+            <div class="period-filter" id="dash-period-filter">
+              <button class="active" data-period="day">Day</button><button data-period="week">Week</button><button data-period="month">Month</button>
+            </div>
+          </div>
+          <div class="chart-wrap"><svg id="dash-chart"></svg><div class="chart-tooltip" id="dash-tooltip"></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Top products</h3></div>
+          <div id="top-products-list"></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Recent orders</h3></div>
+        <div id="recent-orders-table"></div>
+      </div>
+    </div>
+
+    <div class="admin-view" id="view-products"></div>
+    <div class="admin-view" id="view-orders"></div>
+    <div class="admin-view" id="view-customers"></div>
+    <div class="admin-view" id="view-sales"></div>
+    <div class="admin-view" id="view-analytics"></div>
+    <div class="admin-view" id="view-payments"></div>
+    <div class="admin-view" id="view-settings"></div>
+  </main>
+</div>
+
+<div id="toast-stack"></div>
+
+<script type="module">
+  import { initAdminDashboard } from './js/admin/dashboard.js';
+  initAdminDashboard();
+</script>
+</body>
+</html>
