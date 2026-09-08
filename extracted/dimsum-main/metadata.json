@@ -1,0 +1,7 @@
+{
+  "name": "Dimsum Istimewa",
+  "description": "Website resmi pemesanan dimsum ayam udang asli halal, lezat, dan juicy dengan penawaran spesial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

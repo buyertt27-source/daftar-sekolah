@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow: hidden;
+    user-select: none;
+    touch-action: pan-x pan-y;
+  }
+}
+
+/* Liquid Glass effect styling (White Theme with Blue & Orange accents) */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 32px -4px rgba(14, 165, 233, 0.08), 0 4px 12px -2px rgba(249, 115, 22, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.liquid-glass-accent {
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.9) 0%, rgba(240, 249, 255, 0.9) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  box-shadow: 0 14px 34px -4px rgba(249, 115, 22, 0.15), 0 4px 12px -2px rgba(14, 165, 233, 0.12), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+.liquid-glass-blue {
+  background: linear-gradient(135deg, rgba(240, 249, 255, 0.88) 0%, rgba(224, 242, 254, 0.75) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.14), inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+.liquid-glass-orange {
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.88) 0%, rgba(254, 237, 213, 0.75) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  box-shadow: 0 12px 28px -4px rgba(234, 88, 12, 0.14), inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+.liquid-glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
