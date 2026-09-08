@@ -17,7 +17,7 @@ jobs:
       - name: Unzip
         run: |
           mkdir -p extracted
-          unzip -o "aether-storefront.zip" -d extracted
+          unzip -o "dimsum-main.zip" -d extracted
 
       - name: Commit extracted files
         run: |
